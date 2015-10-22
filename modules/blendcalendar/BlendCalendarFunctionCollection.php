@@ -15,7 +15,7 @@ class BlendCalendarFunctionCollection
         {
             $endTime = strtotime($endTime);
         }
-        else
+        else if(!$endTime && !is_numeric($endTime))
         {
             $endTime = strtotime(date('n/t/Y', $startTime)); //End of the current month
         }
