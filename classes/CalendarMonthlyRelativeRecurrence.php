@@ -74,6 +74,12 @@ class CalendarMonthlyRelativeRecurrence extends CalendarRecurrence
                 $offset = 0;
             }
             
+            // Fix January not start from monday
+            if (intval($currWeek) == 1 && $monthFirstDow > 1)
+            {
+                $offset = $monthStartWeek;
+            }
+            
             $thisWeekNum = ($currWeek - $monthStartWeek + $offset);
             
         }        
